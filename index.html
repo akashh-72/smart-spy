@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanvi App - Owner Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Tanvi <span>Surveillance</span></h1>
+            </div>
+            <div id="status-badge" class="badge offline">Offline</div>
+        </header>
+
+        <main>
+            <section class="live-section">
+                <div class="section-header">
+                    <h2>Live Stream</h2>
+                    <div class="live-controls">
+                        <button id="live-start-btn" class="secondary">Start Live</button>
+                        <button id="live-stop-btn" class="danger" disabled>Stop Live</button>
+                    </div>
+                </div>
+                <div class="live-monitor">
+                    <div id="live-placeholder" class="placeholder">Stream is offline</div>
+                    <img id="live-frame" src="" alt="Live Stream" style="display: none;">
+                    <div id="live-indicator" class="live-indicator" style="display: none;">LIVE</div>
+                </div>
+            </section>
+
+            <section class="controls">
+                <h2>Quick Actions</h2>
+                <div class="button-grid">
+                    <button id="capture-btn" class="primary">
+                        <span class="icon">📸</span> Snapshot
+                    </button>
+                    <button id="record-start-btn" class="secondary">
+                        <span class="icon">🎙️</span> Start Mic
+                    </button>
+                    <button id="record-stop-btn" class="danger" disabled>
+                        <span class="icon">⏹️</span> Stop Mic
+                    </button>
+                </div>
+            </section>
+
+            <section class="gallery">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="images">Snapshots</button>
+                    <button class="tab-btn" data-tab="audio">Audio Logs</button>
+                </div>
+                
+                <div id="images-panel" class="tab-panel active">
+                    <div id="image-list" class="media-grid">
+                        <p class="placeholder">No snapshots captured yet.</p>
+                    </div>
+                </div>
+
+                <div id="audio-panel" class="tab-panel">
+                    <div id="audio-list" class="media-list">
+                        <p class="placeholder">No audio logs recorded yet.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Device Last Seen: <span id="last-seen">Never</span></p>
+        </footer>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
